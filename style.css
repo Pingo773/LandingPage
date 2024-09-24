@@ -1,0 +1,235 @@
+/* Formata todos os elementos do site */
+* {
+    /* ALTERA A MARGEM  */
+    margin: 0;
+    /* ALTERA A PADDING */
+    padding: 0;
+    /* box model é um modelo de caixas que define como vão se organizam no css (margin, borda e padding) */
+    box-sizing: border-box;
+}
+
+/* DEFINE LAS CARACTERÍSTICAS DE TODOS LOS ELEMENTOS DENTRO DE BODY */
+body {
+    /* DEFINE LA FAMILIA DE LA FUENTE DEL TEXTO uma fonte sem serifa (sans-serif) é melhor para a leitura num website. */
+    font-family: Arial, Helvetica, sans-serif;
+    /* DEFINE ESPACIO DE ALTURA ENTRE CADA ELEMENTOCON ALTURA DE LINEA */
+    line-height: 1.6;
+    /* COLOR DEL FONDO DEL ELEMENTO (FONDO DE LA PAGINA AL SER HIJO DE BODY) */
+    background-color: #f9f9f9;
+}
+
+body h1{
+    margin-top: 7%;
+}
+
+/* DEFINE LAS CARACTERÍSTICAS DE TODOS LOS ELEMENTOS DENTRO DE NAV */
+nav {
+    /* FIJA LA POSICIÓN DEL ELEMENTO EN LA PANTALLA PARA SEGUIR VIENDOLA AL HACER SCROLL */
+    position: fixed;
+    /* ESPAÇAMENTO APARTIR DO TOPO, CON 0 QUEDA PEGADO A LA PARTE SUPERIOR */
+    top: 0;
+    /* EL ANCHO DEL ELEMENTO (100% OCUPA TODA LA PAGINA) */
+    width: 100%;
+    /* COLOR DEL FONDO DEL ELEMENTO */
+    background-color: #00000071;
+    /* SEPARACIÓN HACIA ADENTRO ENTRE LA CAJA DEL ELEMENTO Y LOS TEXTOS, EL PRIMER VALOR ES EL ESPACIO VERTICAL (20) Y EL OTRO, HORIZONTAL. (0) */
+    padding: 20px, 0;
+}
+
+
+
+/* DEFINE LAS CARACTERÍSTICAS DE TODOS LOS ELEMENTOS DENTRO DEL HIJO DE NAV: UL */
+nav ul {
+    /* HACE QUE LA LISTA NO TENGA TIPO, POR EJEMPLO SIN MOSTRAR PUNTOS */
+    list-style-type: none;
+    /* MUESTRA LA LISTA DE FORMA FLEXIBLE HACIENDO QUE ESTÉ UNA AL LADO DE OTRO*/
+    display: flex;
+    /* COLOCA EL CONTENIDO QUE ESTÁ DENTRO DEL ELEMENTO EN EL CENTRO (solo funciona junto con display: flex */
+    justify-content: center;
+}
+
+
+
+/* DEFINE LAS CARACTERÍSTICAS DE TODOS LOS ELEMENTOS DENTRO DEL HIJO DE UL: LI */
+
+
+nav ul li {
+    /* DEFINE LA MARGEN ENTRE CADA ELEMENTO DE LA LISTA, ESTÁ 3 PIXELES DE ALTURA Y 20 PIXELES DE ANCHURA */
+    margin: 8px 2%;
+}
+
+
+
+/* DEFINE LAS CARACTERÍSTICAS DE TODOS LOS ELEMENTOS DENTRO DEL HIJO DE LI: A */
+nav ul li a {
+    /* COLOR DEL TEXTO */
+    color: white;
+    /* DECORACIÓN DEL TEXTO (NONE QUITA TODO TIPO DE DECORACIÓN, AQUÍ QUITA EL SUBRAYADO DE LOS ELEMENTOS QUE SON VINCULOS */
+    text-decoration: none;
+    /* TAMAÑO DE LA FUENTE, LETRAS DEL TEXTO */
+    font-size: 80%;
+    /* ESPACIO PARA ADENTRO DE LOS ELEMENTOS A*/
+    padding: 10px;
+
+    /* parece que cambia desde su configuración default hasta terminar en nuestra config con una transición de 300 milisegundos. AYUDA A SUAVIZAR EL EFECTO  */
+    transition: color 0.3s;
+}
+
+
+
+/* El texto cambia de color con una transición al pasar el mouse por encima. La duración de la transición está definida en el bloque de código de arriba.
+transition: color 0.3s */
+/* HOVER ES COMO UN EVENTO QUE ES PASAR EL MOUSE POR EL ELEMENTO, EN ESTE BLOQUE TODO LO QUE ESTÁ PROGRAMADO, SUCEDE CUANDO SE PASA EL PUNTERO ENCIMA EL ELEMENTO. */
+nav ul li a:hover {
+    /* COLOR DEL TEXTO */
+    color: #21ff0d;
+    /* TAMAÑO DE LA FUENTE */
+    font-size: 100%;
+}
+
+
+
+/* Dentro del section, todos los hijos que no se llamen home, recibirán esas características citadas abajo. */
+section:not(#home) {
+    /* ESPACIO PARA ADENTRO DE  */
+    padding: 100px 20px;
+    /* ALINEA EL TEXTO EN EL CENTRO */
+    text-align: center;
+    /*  */
+    display: flex;
+    justify-content: center;
+    /* ALINHAMENTO DE ELEMENTOS VERTICAL */
+    align-items: center;
+    /* CADA SECCIÓN TENDRÁ EXACTAMENTE EL TAMAÑO DE LA PANTALLA POR TENER EL VALOR EN 100vh(VH = VIEWPORT HEIGHT) */
+    height: 100vh;
+    
+}
+
+#home {
+    background-color: #5b738f;
+    background-image: url(https://supercell.com/images/1a5b69311180a4a1c374e10556941f05/hero_bg_brawlstars.a385872a.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: rgb(255, 255, 255);
+
+    /* viewport height */
+    height: 100vh;
+    /* alinea el texto y lo coloca centrado */
+    text-align: center;
+    background-color: #000000;
+    /* Organiza el contenido para que sea flexible */
+    display: flex;
+    /* Coloca los elementos unos sobre el otro en forma vertical. */
+    flex-direction: column;
+    /* coloca los elementos en el centro (NO FUNCIONA SIN display: flex */
+    justify-content: center;
+    align-items: center;
+    /* Tamaño de la fuente/texto */
+    font-size: 1.5em;
+}
+
+.content {
+    /* Disponibiliza el contenido flexible */
+    display: flex;
+    /* Coloca y organiza los elementos uno al lado del otro, default del display:flex */
+    flex-direction: row;
+    /* Coloca los elementos para que se vean en el centro verticalmente  */
+    align-items: center;
+    
+    justify-content: center;
+}
+
+.content img {
+    width: 55%;
+    height: auto;
+    object-fit: cover;
+    margin-right: 20px;
+    border-radius: 8px;
+}
+
+/* Formata a classe text filho de content */
+.content .text {
+    max-width: 600px;
+    text-align: left;
+}
+
+/* Formata o h2 dentro de text dentro de content */
+.content .text h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.content text p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+#characters {
+    background-color: #ffffff;
+}
+
+#gamemodes {
+    background-color: #94949488;
+
+}
+
+#on-line {
+    background-color: #ffffff;
+}
+
+#download {
+    background-color: #ffffff;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer a {
+    margin: 5px;
+}
+
+.PlayStore:hover{
+    animation: botaoPSAnimado 0.3s infinite alternate;
+}
+
+
+@keyframes botaoPSAnimado {
+    0% {
+        font-size: 30px;
+    }
+    
+    100% {
+        font-size: 50px;
+    }
+}
+
+
+footer a img{
+    width: 150px;
+    height: auto;
+}
+
+.cta-button {
+    margin-top: 30px;
+    background-color: #89ff29;
+    color: rgb(0, 0, 0);
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 15px;
+    /* Define la textura del cursor al pasar el mouse por encima del elemento */
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 1s ease, transform 1s ease;
+}
+
+
+.cta-button:hover{
+    box-shadow: 0px 3px 3px #000000;
+    font-size: 20px;
+}
+
+
